@@ -1,0 +1,51 @@
+# config_Saltos.yaml
+# Parámetros biomecánicos para el análisis de Salto
+# con enfoque en medicina deportiva por Ergo SaniTas SpA.
+
+proporciones:
+  m: {'altura_femur': 0.23, 'altura_tibia': 0.22, 'distancia_rodillas': 0.18}
+  f: {'altura_femur': 0.22, 'altura_tibia': 0.21, 'distancia_rodillas': 0.17}
+
+rom_optimo_salto:
+  rodilla:
+    flexion_min_cm: 90       # Mínimo ángulo para contramovimiento (CM) (ej. 90-100 grados)
+    flexion_objetivo_cm: 70  # Ángulo objetivo de flexión en CM
+    extension_takeoff: 170   # Ángulo de rodilla en despegue (casi extendida)
+    flexion_landing_max: 90  # Máximo ángulo de flexión en aterrizaje (aterrizaje suave)
+    extension_landing_min: 160 # Mínimo ángulo de extensión en aterrizaje (evitar rodillas bloqueadas)
+  cadera:
+    flexion_min_cm: 100      # Mínimo ángulo de cadera en CM
+    extension_takeoff: 170   # Ángulo de cadera en despegue
+    flexion_landing_max: 90  # Máximo ángulo de cadera en aterrizaje
+  tobillo:
+    dorsiflexion_cm: 70      # Ángulo mínimo de tobillo para dorsiflexión en CM
+    plantarflexion_takeoff: 160 # Ángulo de tobillo en plantiflexión en despegue
+    dorsiflexion_landing: 80 # Ángulo de tobillo en dorsiflexión en aterrizaje (absorción)
+  columna:
+    alineacion_general: 170  # Línea hombro-cadera-rodilla general
+    inclinacion_tronco_max: 30 # Ángulo máximo de inclinación del tronco (hombro-cadera-rodilla)
+
+parametros_salto:
+  min_flight_time: 0.15      # Tiempo mínimo de vuelo para considerar un salto válido (segundos)
+  min_vertical_displacement_m: 0.10 # Desplazamiento vertical mínimo para considerar un salto (metros)
+  max_landing_time: 0.5      # Tiempo máximo para la fase de aterrizaje (segundos)
+  rodillas_valgo_tolerancia_x: 0.04 # Tolerancia para rodillas hacia adentro en despegue/aterrizaje (en píxeles normalizados o metros)
+  stiff_landing_tolerance: 10 # Tolerancia en grados para detectar aterrizaje rígido (diferencia de ROM)
+  max_landing_impact_angle_vel: 1.5 # Umbral para velocidad angular en aterrizaje (relativo)
+
+nivel_usuario:
+  principiante:
+    tolerancia_angulo: 20
+    velocidad_cm_min: 0.10 # Velocidad angular deg/s en CM
+    velocidad_takeoff_min: 0.4 # Velocidad angular deg/s en despegue
+    rango_minimo_cm: 70    # % del ROM objetivo en CM
+  intermedio:
+    tolerancia_angulo: 10
+    velocidad_cm_min: 0.20
+    velocidad_takeoff_min: 0.8
+    rango_minimo_cm: 80
+  avanzado:
+    tolerancia_angulo: 5
+    velocidad_cm_min: 0.30
+    velocidad_takeoff_min: 1.2
+    rango_minimo_cm: 90

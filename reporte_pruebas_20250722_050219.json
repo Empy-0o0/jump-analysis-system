@@ -1,0 +1,12 @@
+{
+  "fecha": "2025-07-22T05:02:19.843323",
+  "total_pruebas": 29,
+  "exitosas": 27,
+  "fallidas": 2,
+  "porcentaje_exito": 93.10344827586206,
+  "errores": [
+    "Carga de configuración YAML: name 'yaml' is not defined",
+    "Funcionalidad demo web: No module named 'flask'"
+  ],
+  "sistema_listo": null
+}
